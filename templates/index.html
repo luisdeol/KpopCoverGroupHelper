@@ -1,0 +1,33 @@
+{% extends "layout.html" %}
+{% block content %}
+    <div id="page-content-wrapper">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-12">
+                            <table class="table table-hover">
+                                <thead class="thead-default">
+                                    <tr>
+                                {% for item in headers_list %}
+                                        <td> {{ item }} </td>
+                                {% endfor %}
+                                    </tr>
+                                </thead>
+                                {% for item in list %}
+                                    <tr>
+                                    <td> {{ value }} </td>
+                                    {% for key,value in item.items %}
+                                        {% if value == "False" %}
+                                            <td> Nao </td>
+                                        {% else %}
+                                            <td> Sim </td>
+                                        {% endif %}
+
+                                    {% endfor %}
+                                    </tr>
+                                {% endfor %}
+                            </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+{% endblock %}
